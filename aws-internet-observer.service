@@ -1,0 +1,15 @@
+[Unit]
+Description=AWS Internet Observer IP Updater
+After=network.target
+
+[Service]
+Type=simple
+User=dev
+WorkingDirectory=/home/administrator/aws-internet-observer-ip-updater
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/administrator/aws-internet-observer-ip-updater/venv/bin/python3 aws-internet-observer-local.py
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
