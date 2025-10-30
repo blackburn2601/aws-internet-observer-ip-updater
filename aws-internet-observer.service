@@ -7,9 +7,10 @@ Type=simple
 User=administrator
 WorkingDirectory=/home/administrator/aws-internet-observer-ip-updater
 Environment=PYTHONUNBUFFERED=1
-ExecStart=/home/administrator/aws-internet-observer-ip-updater/venv/bin/python3 aws-internet-observer-local.py
+# EnvironmentFile=/home/administrator/aws-internet-observer-ip-updater/.env
+ExecStart=/home/administrator/aws-internet-observer-ip-updater/venv/bin/python3 /home/administrator/aws-internet-observer-ip-updater/aws-internet-observer-local.py
 Restart=always
-RestartSec=60
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
